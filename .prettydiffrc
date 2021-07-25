@@ -1,0 +1,9 @@
+{
+    "preserve": 1,
+    "new_line": true,
+    "indent_size": 4,
+    "indent_level": 0,
+    "correct": true,
+    "css_insert_lines": true,
+    "wrap": 80
+}
