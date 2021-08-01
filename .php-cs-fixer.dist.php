@@ -1,4 +1,10 @@
 <?php
+
+$finder = PhpCsFixer\Finder::create()
+    ->in('src')
+    ->in('tests')
+    ->notName('bootstrap.php');
+
 $config = new PhpCsFixer\Config();
 return $config->setRules(array(
     '@Symfony' => true,
@@ -49,4 +55,5 @@ return $config->setRules(array(
 ))
 ->setLineEnding("\n")
 ->setRiskyAllowed(true)
+->setFinder($finder)
 ;
