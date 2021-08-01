@@ -48,6 +48,11 @@
         "twig/twig": "^2.12|^3.0"
     },
     "require-dev": {
+        "behat/behat": "^3.8",
+        "friends-of-behat/mink": "^1.9",
+        "friends-of-behat/mink-browserkit-driver": "^1.5",
+        "friends-of-behat/mink-extension": "^2.5",
+        "friends-of-behat/symfony-extension": "^2.0",
         "phpstan/extension-installer": "^1.1",
         "phpstan/phpstan": "^0.12.94",
         "phpstan/phpstan-symfony": "^0.12.41",
