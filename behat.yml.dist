@@ -11,6 +11,7 @@ default:
                 environment: test
                 debug: true
         Behat\MinkExtension:
+            show_cmd: 'open %s'
             sessions:
                 symfony:
                     symfony: ~
