@@ -51,6 +51,7 @@ return $config->setRules(array(
     'declare_strict_types' => true,
     'strict_comparison' => true,
     'strict_param' => true,
+    'void_return' => true,
 ))
 ->setLineEnding("\n")
 ->setRiskyAllowed(true)
