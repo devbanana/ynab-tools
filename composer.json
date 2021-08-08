@@ -55,6 +55,8 @@
         "friends-of-behat/symfony-extension": "^2.0",
         "phpstan/extension-installer": "^1.1",
         "phpstan/phpstan": "^0.12.94",
+        "phpstan/phpstan-mockery": "^0.12.14",
+        "phpstan/phpstan-phpunit": "^0.12.21",
         "phpstan/phpstan-symfony": "^0.12.41",
         "phpunit/phpunit": "^9.5",
         "symfony/browser-kit": "^5.3",
