@@ -53,6 +53,7 @@
         "friends-of-behat/mink-browserkit-driver": "^1.5",
         "friends-of-behat/mink-extension": "^2.5",
         "friends-of-behat/symfony-extension": "^2.0",
+        "friendsofphp/php-cs-fixer": "^3.0",
         "phpstan/extension-installer": "^1.1",
         "phpstan/phpstan": "^0.12.94",
         "phpstan/phpstan-mockery": "^0.12.14",
