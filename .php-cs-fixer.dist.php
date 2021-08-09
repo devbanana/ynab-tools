@@ -6,18 +6,18 @@ $finder = PhpCsFixer\Finder::create()
     ->notName('bootstrap.php');
 
 $config = new PhpCsFixer\Config();
-return $config->setRules(array(
+
+return $config->setRules([
+    '@PHP80Migration' => true,
     '@Symfony' => true,
     'array_indentation' => true,
-    'array_syntax' => array('syntax' => 'short'),
     'method_chaining_indentation' => true,
-    'concat_space' => array('spacing' => 'one'),
+    'concat_space' => ['spacing' => 'one'],
     'phpdoc_line_span' => true,
     'yoda_style' => ['equal' => false, 'identical' => false, 'less_and_greater' => false],
     'ordered_class_elements' => true,
     'explicit_indirect_variable' => true,
     'heredoc_to_nowdoc' => true,
-    'heredoc_indentation' => true,
     'escape_implicit_backslashes' => [
         'single_quoted' => true,
         'double_quoted' => true,
@@ -41,30 +41,24 @@ return $config->setRules(array(
         "\n" .
         "@author Brandon Olivares <programmer2188@gmail.com>\n" .
         "@copyright (C) 2021 Brandon Olivares <programmer2188@gmail.com>\n" .
-        "@license http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later",
+        '@license http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later',
         'comment_type' => 'PHPDoc',
         'location' => 'after_declare_strict',
         'separate' => 'both',
     ],
     // Risky
+    '@PHP80Migration:risky' => true,
     '@Symfony:risky' => true,
-    'psr_autoloading' => false,
-    'php_unit_construct' => true,
-    'php_unit_dedicate_assert' => true,
-    'php_unit_dedicate_assert_internal_type' => true,
+    '@PHPUnit84Migration:risky' => true,
     'php_unit_strict' => true,
     'php_unit_test_case_static_method_calls' => ['call_type' => 'self'],
-    'php_unit_no_expectation_annotation' => true,
-    'php_unit_expectation' => true,
-    'declare_strict_types' => true,
     'strict_comparison' => true,
     'strict_param' => true,
-    'void_return' => true,
     'final_class' => true,
     'final_public_method_for_abstract_class' => true,
     'date_time_immutable' => true,
-))
-->setLineEnding("\n")
-->setRiskyAllowed(true)
-->setFinder($finder)
+])
+    ->setLineEnding("\n")
+    ->setRiskyAllowed(true)
+    ->setFinder($finder)
 ;
