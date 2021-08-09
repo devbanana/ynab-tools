@@ -15,6 +15,14 @@ return $config->setRules(array(
     'phpdoc_line_span' => true,
     'yoda_style' => ['equal' => false, 'identical' => false, 'less_and_greater' => false],
     'ordered_class_elements' => true,
+    'explicit_indirect_variable' => true,
+    'heredoc_to_nowdoc' => true,
+    'heredoc_indentation' => true,
+    'escape_implicit_backslashes' => [
+        'single_quoted' => true,
+        'double_quoted' => true,
+        'heredoc_syntax' => true,
+    ],
     'header_comment' => [
         'header' => "This file is part of YNAB Tools.\n" .
         "\n" .
@@ -52,6 +60,9 @@ return $config->setRules(array(
     'strict_comparison' => true,
     'strict_param' => true,
     'void_return' => true,
+    'final_class' => true,
+    'final_public_method_for_abstract_class' => true,
+    'date_time_immutable' => true,
 ))
 ->setLineEnding("\n")
 ->setRiskyAllowed(true)
