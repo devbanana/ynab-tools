@@ -96,14 +96,16 @@
     },
     "scripts": {
         "check": [
-            "@rector",
-            "@fix-cs",
-            "@phpstan",
+            "@rector-check",
+            "@check-cs",
+            "@analyze",
             "@test"
         ],
         "rector": "vendor/bin/rector process",
+        "rector-check": "vendor/bin/rector process -n",
+        "check-cs": "vendor/bin/php-cs-fixer fix --dry-run",
         "fix-cs": "vendor/bin/php-cs-fixer fix",
-        "phpstan": "vendor/bin/phpstan analyze",
+        "analyze": "vendor/bin/phpstan analyze",
         "test": "vendor/bin/phpunit",
         "auto-scripts": {
             "cache:clear": "symfony-cmd",
