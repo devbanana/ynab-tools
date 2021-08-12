@@ -101,12 +101,12 @@
             "@analyze",
             "@test"
         ],
-        "rector": "vendor/bin/rector process",
-        "rector-check": "vendor/bin/rector process -n",
-        "check-cs": "vendor/bin/php-cs-fixer fix --dry-run",
-        "fix-cs": "vendor/bin/php-cs-fixer fix",
-        "analyze": "vendor/bin/phpstan analyze",
-        "test": "vendor/bin/phpunit",
+        "rector": "rector process --ansi",
+        "rector-check": "rector process -n --ansi",
+        "check-cs": "php-cs-fixer fix --dry-run --ansi",
+        "fix-cs": "php-cs-fixer fix --ansi",
+        "analyze": "phpstan analyze --ansi",
+        "test": "phpunit --colors=always",
         "auto-scripts": {
             "cache:clear": "symfony-cmd",
             "assets:install %PUBLIC_DIR%": "symfony-cmd"
