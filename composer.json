@@ -81,12 +81,12 @@
     },
     "autoload": {
         "psr-4": {
-            "App\\": "src/"
+            "Devbanana\\YnabTools\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "App\\Tests\\": "tests/"
+            "Devbanana\\YnabTools\\Tests\\": "tests/"
         }
     },
     "replace": {
