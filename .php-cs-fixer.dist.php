@@ -13,6 +13,7 @@ return $config->setRules([
     'array_indentation' => true,
     'method_chaining_indentation' => true,
     'concat_space' => ['spacing' => 'one'],
+    'align_multiline_comment' => ['comment_type' => 'all_multiline'],
     'phpdoc_line_span' => true,
     'yoda_style' => ['equal' => false, 'identical' => false, 'less_and_greater' => false],
     'ordered_class_elements' => true,
