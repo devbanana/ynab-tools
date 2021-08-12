@@ -52,7 +52,7 @@ return static function (ContainerConfigurator $containerConfigurator): void {
     $parameters->set(Option::IMPORT_DOC_BLOCKS, true);
     $parameters->set(
         Option::SYMFONY_CONTAINER_XML_PATH_PARAMETER,
-        __DIR__ . '/var/cache/dev/App_KernelDevDebugContainer.xml'
+        __DIR__ . '/var/cache/dev/Devbanana_YnabTools_Infrastructure_KernelDevDebugContainer.xml'
     );
 
     $parameters->set(Option::SKIP, [
