@@ -1,8 +1,8 @@
 default:
     suites:
-        default:
+        acceptance:
             contexts:
-                - App\Tests\Behat\SecurityContext
+                - Devbanana\YnabTools\Tests\Acceptance\AuthenticationContext
 
     extensions:
         FriendsOfBehat\SymfonyExtension:
