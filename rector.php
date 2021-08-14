@@ -62,6 +62,9 @@ return static function (ContainerConfigurator $containerConfigurator): void {
         RenameVariableToMatchMethodCallReturnTypeRector::class,
         RenameVariableToMatchNewTypeRector::class,
         UnSpreadOperatorRector::class,
+
+            // Paths
+            'tests/bootstrap.php',
     ]);
 
     $services = $containerConfigurator->services();
@@ -71,14 +74,15 @@ return static function (ContainerConfigurator $containerConfigurator): void {
     $containerConfigurator->import(SetList::DEAD_CODE);
     $containerConfigurator->import(SetList::PRIVATIZATION);
     $containerConfigurator->import(SetList::NAMING);
+    $containerConfigurator->import(SetList::PSR_4);
     $containerConfigurator->import(SetList::TYPE_DECLARATION);
     $containerConfigurator->import(SetList::TYPE_DECLARATION_STRICT);
+    $containerConfigurator->import(SetList::EARLY_RETURN);
     $containerConfigurator->import(SetList::PHP_71);
     $containerConfigurator->import(SetList::PHP_72);
     $containerConfigurator->import(SetList::PHP_73);
     $containerConfigurator->import(SetList::PHP_74);
     $containerConfigurator->import(SetList::PHP_80);
-    $containerConfigurator->import(SetList::EARLY_RETURN);
 
     // PHPUnit
     $containerConfigurator->import(PHPUnitSetList::PHPUNIT_60);
