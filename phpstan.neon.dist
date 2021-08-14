@@ -1,3 +1,6 @@
+includes:
+    - vendor/phpstan/phpstan/conf/bleedingEdge.neon
+
 parameters:
     symfony:
         container_xml_path: var/cache/dev/Devbanana_YnabTools_Infrastructure_KernelDevDebugContainer.xml
@@ -5,3 +8,9 @@ parameters:
     paths:
         - src
         - tests
+    exceptions:
+        check:
+            missingCheckedExceptionInThrows: true
+            tooWideThrowType: true
+        uncheckedExceptionClasses:
+            - \InvalidArgumentException
