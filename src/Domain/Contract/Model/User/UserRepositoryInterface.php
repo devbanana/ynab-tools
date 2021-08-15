@@ -23,8 +23,11 @@ declare(strict_types=1);
  * @license http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-namespace Devbanana\YnabTools\Application\Common;
+namespace Devbanana\YnabTools\Domain\Contract\Model\User;
 
-interface CommandHandlerInterface
+use Devbanana\YnabTools\Domain\Model\User\UserId;
+
+interface UserRepositoryInterface
 {
+    public function createIdentity(): UserId;
 }

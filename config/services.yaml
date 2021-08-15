@@ -12,7 +12,7 @@ services:
         autoconfigure: true # Automatically registers your services as commands, event subscribers, etc.
 
     _instanceof:
-        Devbanana\YnabTools\Application\Common\CommandHandlerInterface:
+        Devbanana\YnabTools\Application\Contract\CommandHandlerInterface:
             tags:
                 - { name: messenger.message_handler, bus: command.bus }
 

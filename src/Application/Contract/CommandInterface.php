@@ -23,7 +23,7 @@ declare(strict_types=1);
  * @license http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-namespace Devbanana\YnabTools\Application\Common;
+namespace Devbanana\YnabTools\Application\Contract;
 
 /**
  * All commands should implement this interface.

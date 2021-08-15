@@ -25,8 +25,8 @@ declare(strict_types=1);
 
 namespace Devbanana\YnabTools\Tests\Acceptance;
 
+use Devbanana\YnabTools\Domain\Contract\Model\User\UserRepositoryInterface;
 use Devbanana\YnabTools\Domain\Model\User\UserId;
-use Devbanana\YnabTools\Domain\Model\User\UserRepositoryInterface;
 
 final class UserRepositoryStub implements UserRepositoryInterface
 {

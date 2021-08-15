@@ -25,6 +25,8 @@ declare(strict_types=1);
 
 namespace Devbanana\YnabTools\Application\Common;
 
+use Devbanana\YnabTools\Application\Contract\CommandBusInterface;
+use Devbanana\YnabTools\Application\Contract\CommandInterface;
 use Symfony\Component\Messenger\HandleTrait;
 use Symfony\Component\Messenger\MessageBusInterface;
 
