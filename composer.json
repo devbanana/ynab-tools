@@ -108,7 +108,12 @@
         "check-cs": "php-cs-fixer fix --dry-run --ansi",
         "fix-cs": "php-cs-fixer fix --ansi",
         "analyze": "phpstan analyze --ansi",
-        "test": "phpunit --colors=always",
+        "unit-test": "phpunit --testsuite unit --colors=always",
+        "acceptance-test": "behat -s acceptance --colors",
+        "test": [
+            "@unit-test",
+            "@acceptance-test"
+        ],
         "auto-scripts": {
             "cache:clear --env=test": "symfony-cmd",
             "assets:install %PUBLIC_DIR% --env=test": "symfony-cmd"
