@@ -5,6 +5,7 @@ parameters:
     symfony:
         container_xml_path: var/cache/dev/Devbanana_YnabTools_Infrastructure_KernelDevDebugContainer.xml
     level: max
+    checkExplicitMixed: true
     paths:
         - src
         - tests
