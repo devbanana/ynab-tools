@@ -193,6 +193,9 @@
     "phpstan/phpstan-symfony": {
         "version": "0.12.41"
     },
+    "phpstan/phpstan-webmozart-assert": {
+        "version": "0.12.15"
+    },
     "phpunit/php-code-coverage": {
         "version": "9.2.6"
     },
