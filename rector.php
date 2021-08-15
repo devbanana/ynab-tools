@@ -63,8 +63,8 @@ return static function (ContainerConfigurator $containerConfigurator): void {
         RenameVariableToMatchNewTypeRector::class,
         UnSpreadOperatorRector::class,
 
-            // Paths
-            'tests/bootstrap.php',
+        // Paths
+        'tests/bootstrap.php',
     ]);
 
     $services = $containerConfigurator->services();
