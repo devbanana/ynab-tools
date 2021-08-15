@@ -3,5 +3,7 @@ services:
         autowire: true
         autoconfigure: true
 
-    Devbanana\YnabTools\Tests\Behat\:
-        resource: '../tests/Behat/*'
+    Devbanana\YnabTools\Tests\Acceptance\:
+        resource: '../tests/Acceptance/*'
+
+    Devbanana\YnabTools\Domain\Model\User\UserRepositoryInterface: '@Devbanana\YnabTools\Tests\Acceptance\UserRepositoryStub'
