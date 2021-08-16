@@ -1,5 +1,9 @@
 includes:
     - vendor/phpstan/phpstan/conf/bleedingEdge.neon
+    - vendor/symplify/phpstan-rules/config/array-rules.neon
+    - vendor/symplify/phpstan-rules/config/regex-rules.neon
+    - vendor/symplify/phpstan-rules/config/static-rules.neon
+    - vendor/symplify/phpstan-rules/config/test-rules.neon
 
 parameters:
     symfony:
@@ -9,6 +13,8 @@ parameters:
     paths:
         - src
         - tests
+    excludePaths:
+        - tests/bootstrap.php
     exceptions:
         check:
             missingCheckedExceptionInThrows: true
