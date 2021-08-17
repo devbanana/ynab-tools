@@ -39,8 +39,8 @@ final class CommandBus implements CommandBusInterface
         $this->messageBus = $bus;
     }
 
-    public function dispatch(CommandInterface $command): mixed
+    public function dispatch(CommandInterface $command): void
     {
-        return $this->handle($command);
+        $this->handle($command);
     }
 }

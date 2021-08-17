@@ -27,5 +27,5 @@ namespace Devbanana\YnabTools\Application\Contract;
 
 interface CommandBusInterface
 {
-    public function dispatch(CommandInterface $command): mixed;
+    public function dispatch(CommandInterface $command): void;
 }
