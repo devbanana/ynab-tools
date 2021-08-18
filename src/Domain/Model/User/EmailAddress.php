@@ -31,7 +31,7 @@ final class EmailAddress implements \Stringable
 {
     private function __construct(private string $email)
     {
-        Assert::email($email);
+        Assert::email($email, 'Email must be a validly-formated email address');
     }
 
     public static function fromString(string $email): self

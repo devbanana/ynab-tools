@@ -30,22 +30,14 @@ use PHPUnit\Framework\TestCase;
 
 final class EmailAddressTest extends TestCase
 {
-    public function testCreateEmail(): void
-    {
-        self::assertSame(
-            'foo@example.com',
-        (string) EmailAddress::fromString('foo@example.com')
-        );
-    }
-
-    public function testThrowErrorOnInvalidEmail(): void
+    public function testItFailsWhenEmailIsInvalid(): void
     {
         $this->expectException(\InvalidArgumentException::class);
 
         EmailAddress::fromString('foo');
     }
 
-    public function testThrowsErrorIfBlank(): void
+    public function testItFailsIfEmailIsEmpty(): void
     {
         $this->expectException(\InvalidArgumentException::class);
 
