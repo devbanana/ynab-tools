@@ -53,12 +53,12 @@ final class PasswordTest extends TestCase
         $this->expectException(\InvalidArgumentException::class);
         $this->expectExceptionMessage('Password must be at least 8 characters long');
 
-        Password::fromPlainPassword('foo', $this->hasher); // @phpstan-ignore-line
+        Password::fromPlainPassword('foo', $this->hasher);
     }
 
     public function testItReturnsTheHashedPassword(): void
     {
-        $password = Password::fromPlainPassword('foo123bar', $this->hasher); // @phpstan-ignore-line
+        $password = Password::fromPlainPassword('foo123bar', $this->hasher);
 
         self::assertNotSame('foo123bar', $password->asHash());
         self::assertTrue(
