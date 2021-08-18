@@ -29,6 +29,9 @@ use Webmozart\Assert\Assert;
 
 final class EmailAddress implements \Stringable
 {
+    /**
+     * @phpstan-param non-empty-string $email
+     */
     private function __construct(private string $email)
     {
         Assert::email($email, 'Email must be a validly-formated email address');
@@ -36,14 +39,22 @@ final class EmailAddress implements \Stringable
 
     public static function fromString(string $email): self
     {
+        Assert::stringNotEmpty($email, 'Email must be provided');
+
         return new self($email);
     }
 
+    /**
+     * @phpstan-return non-empty-string
+     */
     public function __toString(): string
     {
         return $this->asString();
     }
 
+    /**
+     * @phpstan-return non-empty-string
+     */
     public function asString(): string
     {
         return $this->email;
