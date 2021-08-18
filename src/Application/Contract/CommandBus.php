@@ -25,11 +25,7 @@ declare(strict_types=1);
 
 namespace Devbanana\YnabTools\Application\Contract;
 
-/**
- * All commands should implement this interface.
- *
- * All objects implementing CommandInterface will be handled by the CommandHandler.
- */
-interface CommandInterface
+interface CommandBus
 {
+    public function dispatch(Command $command): void;
 }

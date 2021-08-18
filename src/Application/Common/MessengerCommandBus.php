@@ -23,9 +23,24 @@ declare(strict_types=1);
  * @license http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-namespace Devbanana\YnabTools\Application\Contract;
+namespace Devbanana\YnabTools\Application\Common;
 
-interface CommandBusInterface
+use Devbanana\YnabTools\Application\Contract\Command;
+use Devbanana\YnabTools\Application\Contract\CommandBus;
+use Symfony\Component\Messenger\HandleTrait;
+use Symfony\Component\Messenger\MessageBusInterface;
+
+final class MessengerCommandBus implements CommandBus
 {
-    public function dispatch(CommandInterface $command): void;
+    use HandleTrait;
+
+    public function __construct(MessageBusInterface $bus)
+    {
+        $this->messageBus = $bus;
+    }
+
+    public function dispatch(Command $command): void
+    {
+        $this->handle($command);
+    }
 }

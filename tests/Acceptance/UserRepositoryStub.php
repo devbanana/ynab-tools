@@ -25,10 +25,10 @@ declare(strict_types=1);
 
 namespace Devbanana\YnabTools\Tests\Acceptance;
 
-use Devbanana\YnabTools\Domain\Contract\Model\User\UserRepositoryInterface;
+use Devbanana\YnabTools\Domain\Contract\Model\User\UserRepository;
 use Devbanana\YnabTools\Domain\Model\User\UserId;
 
-final class UserRepositoryStub implements UserRepositoryInterface
+final class UserRepositoryStub implements UserRepository
 {
     private string $uuid;
 

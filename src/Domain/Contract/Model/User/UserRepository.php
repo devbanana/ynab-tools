@@ -27,7 +27,7 @@ namespace Devbanana\YnabTools\Domain\Contract\Model\User;
 
 use Devbanana\YnabTools\Domain\Model\User\UserId;
 
-interface UserRepositoryInterface
+interface UserRepository
 {
     public function createIdentity(): UserId;
 }

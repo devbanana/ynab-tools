@@ -6,4 +6,4 @@ services:
     Devbanana\YnabTools\Tests\Acceptance\:
         resource: '../tests/Acceptance/*'
 
-    Devbanana\YnabTools\Domain\Contract\Model\User\UserRepositoryInterface: '@Devbanana\YnabTools\Tests\Acceptance\UserRepositoryStub'
+    Devbanana\YnabTools\Domain\Contract\Model\User\UserRepository: '@Devbanana\YnabTools\Tests\Acceptance\UserRepositoryStub'
