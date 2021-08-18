@@ -10,6 +10,8 @@ parameters:
         container_xml_path: var/cache/dev/Devbanana_YnabTools_Infrastructure_KernelDevDebugContainer.xml
     level: max
     checkExplicitMixed: true
+    checkTooWideReturnTypesInProtectedAndPublicMethods: true
+    checkInternalClassCaseSensitivity: true
     paths:
         - src
         - tests
@@ -20,4 +22,10 @@ parameters:
             missingCheckedExceptionInThrows: true
             tooWideThrowType: true
         uncheckedExceptionClasses:
-            - \InvalidArgumentException
+            - LogicException
+
+    ignoreErrors:
+        - '#Anonymous class is not allowed#'
+        -
+            message: '#throws checked exception#'
+            path: tests/*
