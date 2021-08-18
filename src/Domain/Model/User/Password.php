@@ -32,14 +32,14 @@ use Webmozart\Assert\Assert;
 final class Password
 {
     /**
-     * @param non-empty-string $password
+     * @phpstan-param non-empty-string $password
      */
     private function __construct(private string $password)
     {
     }
 
     /**
-     * @param non-empty-string $password
+     * @phpstan-param non-empty-string $password
      *
      * @throws CouldNotHashPassword
      */
@@ -55,6 +55,9 @@ final class Password
         return new self($hashedPassword);
     }
 
+    /**
+     * @phpstan-return non-empty-string
+     */
     public function asHash(): string
     {
         return $this->password;
