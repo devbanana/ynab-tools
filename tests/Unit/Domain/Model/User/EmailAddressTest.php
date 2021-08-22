@@ -28,6 +28,9 @@ namespace Devbanana\YnabTools\Tests\Unit\Domain\Model\User;
 use Devbanana\YnabTools\Domain\Model\User\EmailAddress;
 use PHPUnit\Framework\TestCase;
 
+/**
+ * @internal
+ */
 final class EmailAddressTest extends TestCase
 {
     public function testItFailsWhenEmailIsInvalid(): void

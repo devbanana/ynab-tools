@@ -26,13 +26,14 @@ declare(strict_types=1);
 use Rector\CodingStyle\Enum\PreferenceSelfThis;
 use Rector\CodingStyle\Rector\ClassMethod\UnSpreadOperatorRector;
 use Rector\CodingStyle\Rector\MethodCall\PreferThisOrSelfMethodCallRector;
-use Rector\CodingStyle\Rector\PostInc\PostIncDecToPreIncDecRector;
 use Rector\Core\Configuration\Option;
 use Rector\Naming\Rector\Assign\RenameVariableToMatchMethodCallReturnTypeRector;
 use Rector\Naming\Rector\Class_\RenamePropertyToMatchTypeRector;
 use Rector\Naming\Rector\ClassMethod\RenameParamToMatchTypeRector;
 use Rector\Naming\Rector\ClassMethod\RenameVariableToMatchNewTypeRector;
 use Rector\PHPUnit\Set\PHPUnitSetList;
+use Rector\Privatization\Rector\MethodCall\PrivatizeLocalGetterToPropertyRector;
+use Rector\Renaming\Rector\Name\RenameClassRector;
 use Rector\Set\ValueObject\SetList;
 use Rector\Symfony\Set\SymfonySetList;
 use Rector\Symfony\Set\TwigSetList;
@@ -56,7 +57,7 @@ return static function (ContainerConfigurator $containerConfigurator): void {
     );
 
     $parameters->set(Option::SKIP, [
-        PostIncDecToPreIncDecRector::class,
+        PrivatizeLocalGetterToPropertyRector::class,
         RenameParamToMatchTypeRector::class,
         RenamePropertyToMatchTypeRector::class,
         RenameVariableToMatchMethodCallReturnTypeRector::class,
@@ -78,6 +79,8 @@ return static function (ContainerConfigurator $containerConfigurator): void {
     $containerConfigurator->import(SetList::TYPE_DECLARATION);
     $containerConfigurator->import(SetList::TYPE_DECLARATION_STRICT);
     $containerConfigurator->import(SetList::EARLY_RETURN);
+
+    // PHP version
     $containerConfigurator->import(SetList::PHP_71);
     $containerConfigurator->import(SetList::PHP_72);
     $containerConfigurator->import(SetList::PHP_73);
@@ -101,7 +104,8 @@ return static function (ContainerConfigurator $containerConfigurator): void {
             PreferThisOrSelfMethodCallRector::TYPE_TO_PREFERENCE => [
                 TestCase::class => ValueObjectInliner::inline(PreferenceSelfThis::PREFER_SELF()),
             ],
-        ]]);
+        ]])
+    ;
 
     // Symfony
     $containerConfigurator->import(SymfonySetList::SYMFONY_40);
@@ -119,4 +123,13 @@ return static function (ContainerConfigurator $containerConfigurator): void {
     // Twig
     $containerConfigurator->import(TwigSetList::TWIG_20);
     $containerConfigurator->import(TwigSetList::TWIG_240);
+
+    $services->set(RenameClassRector::class)
+        ->call('configure', [[
+            RenameClassRector::OLD_TO_NEW_CLASSES => [
+                'Devbanana\\YnabTools\\Application\\Contract\\CommandInterface' => 'Devbanana\\YnabTools\\Application\\Contract\\Command',
+                'Devbanana\\YnabTools\\Application\\Contract\\CommandHandlerInterface' => 'Devbanana\\YnabTools\\Application\\Contract\\CommandHandler',
+                'Devbanana\\YnabTools\\Domain\\Contract\\Model\\User\\UserRepositoryInterface' => 'Devbanana\\YnabTools\\Domain\\Contract\\Model\\User\\UserRepository',
+            ], ]])
+    ;
 };

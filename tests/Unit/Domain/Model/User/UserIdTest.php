@@ -28,6 +28,9 @@ namespace Devbanana\YnabTools\Tests\Unit\Domain\Model\User;
 use Devbanana\YnabTools\Domain\Model\User\UserId;
 use PHPUnit\Framework\TestCase;
 
+/**
+ * @internal
+ */
 final class UserIdTest extends TestCase
 {
     public function testCreateId(): void

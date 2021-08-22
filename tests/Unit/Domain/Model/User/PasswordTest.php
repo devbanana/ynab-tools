@@ -29,6 +29,9 @@ use Devbanana\YnabTools\Domain\Contract\Service\PasswordHasher;
 use Devbanana\YnabTools\Domain\Model\User\Password;
 use PHPUnit\Framework\TestCase;
 
+/**
+ * @internal
+ */
 final class PasswordTest extends TestCase
 {
     private PasswordHasher $hasher;
@@ -38,7 +41,7 @@ final class PasswordTest extends TestCase
         $this->hasher = new class() implements PasswordHasher {
             public function hash(string $plainPassword): string
             {
-                return password_hash($plainPassword, \PASSWORD_DEFAULT);
+                return password_hash($plainPassword, PASSWORD_DEFAULT);
             }
 
             public function verify(string $hash, string $plainPassword): bool
