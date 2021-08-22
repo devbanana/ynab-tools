@@ -8502,12 +8502,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/devbanana/php-cs-fixer-config.git",
-                "reference": "aa11517dc93ade6dcd39f5bfde6f847ede5fad92"
+                "reference": "d5d6d0c2adb8b60bf127ce3aaae7c7ece6c3a3a3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/devbanana/php-cs-fixer-config/zipball/aa11517dc93ade6dcd39f5bfde6f847ede5fad92",
-                "reference": "aa11517dc93ade6dcd39f5bfde6f847ede5fad92",
+                "url": "https://api.github.com/repos/devbanana/php-cs-fixer-config/zipball/d5d6d0c2adb8b60bf127ce3aaae7c7ece6c3a3a3",
+                "reference": "d5d6d0c2adb8b60bf127ce3aaae7c7ece6c3a3a3",
                 "shasum": ""
             },
             "require": {
@@ -8544,7 +8544,7 @@
                 "source": "https://github.com/devbanana/php-cs-fixer-config/tree/master",
                 "issues": "https://github.com/devbanana/php-cs-fixer-config/issues"
             },
-            "time": "2021-08-22T05:44:05+00:00"
+            "time": "2021-08-22T22:25:44+00:00"
         },
         {
             "name": "friends-of-behat/mink",
