@@ -20,6 +20,9 @@
     "danielstjules/stringy": {
         "version": "3.1.0"
     },
+    "devbanana/php-cs-fixer-config": {
+        "version": "dev-master"
+    },
     "doctrine/annotations": {
         "version": "1.0",
         "recipe": {
@@ -150,6 +153,9 @@
     },
     "myclabs/deep-copy": {
         "version": "1.10.2"
+    },
+    "myclabs/php-enum": {
+        "version": "1.8.3"
     },
     "nette/neon": {
         "version": "v3.2.2"

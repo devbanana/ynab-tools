@@ -5,6 +5,12 @@
     "license": "GNU GPL v3 or later",
     "minimum-stability": "stable",
     "prefer-stable": true,
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/devbanana/php-cs-fixer-config"
+        }
+    ],
     "require": {
         "php": ">=8.0.0",
         "ext-ctype": "*",
@@ -50,6 +56,7 @@
     },
     "require-dev": {
         "behat/behat": "^3.8",
+        "devbanana/php-cs-fixer-config": "dev-master",
         "friends-of-behat/mink": "^1.9",
         "friends-of-behat/mink-browserkit-driver": "^1.5",
         "friends-of-behat/mink-extension": "^2.5",
