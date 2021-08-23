@@ -25,18 +25,25 @@ declare(strict_types=1);
 
 namespace Devbanana\YnabTools\Domain\Common;
 
+use Symfony\Component\Uid\Uuid;
 use Webmozart\Assert\Assert;
 
 trait UuidTrait
 {
+    /**
+     * @phpstan-param non-empty-string $id
+     */
     private function __construct(private string $id)
     {
-        Assert::uuid($id);
     }
 
     public static function fromString(string $id): self
     {
-        return new self($id);
+        $ulid = Uuid::fromString($id)->toBase32();
+        Assert::stringNotEmpty($ulid);
+        Assert::length($ulid, 26);
+
+        return new self($ulid);
     }
 
     public function asString(): string

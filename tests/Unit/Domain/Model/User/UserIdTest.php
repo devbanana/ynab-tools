@@ -33,17 +33,23 @@ use PHPUnit\Framework\TestCase;
  */
 final class UserIdTest extends TestCase
 {
-    public function testCreateId(): void
+    public function testItCannotBeEmpty(): void
     {
-        self::assertSame(
-            'E84998C5-37EC-4ECE-8226-14F4308E296B',
-            (string) UserId::fromString('E84998C5-37EC-4ECE-8226-14F4308E296B')
-        );
+        $this->expectException(\InvalidArgumentException::class);
+        UserId::fromString('');
     }
 
-    public function testThrosErrorIfNotUuid(): void
+    public function testItRequiresAValidUuid(): void
     {
         $this->expectException(\InvalidArgumentException::class);
         UserId::fromString('foo');
+    }
+
+    public function testItConvertsUuidToBase32(): void
+    {
+        self::assertEqualsCanonicalizing(
+            UserId::fromString('01FDRHBQY0PSFJX3YVM8S6TMP4'),
+            UserId::fromString('017b7115-dfc0-b65f-2e8f-dba2326d52c4')
+        );
     }
 }
